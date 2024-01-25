@@ -1,0 +1,21 @@
+.modal-wrapp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--cur-width);
+    height: var(--cur-height);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.modal-inner{
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    min-width: 500px;
+    left: 120px;
+    top: 120px;
+    width: var(--modal-dim-width);
+    height: var(--modal-dim-height);
+    padding: 20px;
+}

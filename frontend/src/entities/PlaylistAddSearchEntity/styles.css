@@ -1,0 +1,7 @@
+tbody > tr > th {
+    padding: 10px; /* Поля вокруг текста */
+    white-space: nowrap; /* Текст не переносится */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+    text-overflow: ellipsis;
+    max-width: 420px;
+}

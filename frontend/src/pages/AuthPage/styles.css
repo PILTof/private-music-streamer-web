@@ -1,0 +1,14 @@
+.auth-wrapper{
+    position: relative;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+
+}
+form > div > div {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+}

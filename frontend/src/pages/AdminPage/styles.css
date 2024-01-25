@@ -1,0 +1,28 @@
+:root {
+    --admin-upload-block-height: -200px;
+}
+
+.admin-wrapper{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* row-gap: 50px; */
+}
+.admin-top-block-wrapp{
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-around;
+}
+
+.admin-uload-block{
+    display: flex;
+    width: 100%;
+    min-height: 200px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    margin: 20px 0;
+}
+
+.hide {
+    margin-top: var(--admin-upload-block-height);  
+    opacity: 0;
+}

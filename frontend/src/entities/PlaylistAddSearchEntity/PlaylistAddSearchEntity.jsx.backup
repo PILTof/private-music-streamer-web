@@ -1,0 +1,129 @@
+import "./styles.css";
+import { FILE_MUSIC_UPLOAD_DIR } from "../../app/globalConstants";
+import Search from "../../features/Search/Search";
+
+export default function PlaylistAddSearchEntity({ ajaxResult }) {
+    const tracks = ajaxResult;
+    // console.log(tracks);
+    const patchedTracks = () => {
+        let res = [];
+        let filtred = {};
+        ajaxResult.forEach((track, index) => {
+            if (
+                typeof filtred[
+                    track.file_name
+                        .replace(FILE_MUSIC_UPLOAD_DIR, "")
+                        .replace(/\..*/g, "")
+                ] !== "object"
+            ) {
+                filtred[
+                    track.file_name
+                        .replace(FILE_MUSIC_UPLOAD_DIR, "")
+                        .replace(/\..*/g, "")
+                ] = [];
+                filtred[
+                    track.file_name
+                        .replace(FILE_MUSIC_UPLOAD_DIR, "")
+                        .replace(/\..*/g, "")
+                ].push(track);
+            } else {
+                filtred[
+                    track.file_name
+                        .replace(FILE_MUSIC_UPLOAD_DIR, "")
+                        .replace(/\..*/g, "")
+                ].push(track);
+            }
+        });
+        return filtred;
+    };
+
+    const content = () => {
+        let res = [];
+        const arTracks = patchedTracks();
+        for (const trackAr in arTracks) {
+            if (Object.hasOwnProperty.call(arTracks, trackAr)) {
+                const track = arTracks[trackAr];
+                track.forEach((el, i) => {
+                    if (i == 0) {
+                        res.push(
+                            <tr key={el.id}>
+                                <th key={el.id + "_name"}>
+                                    {el.file_name.replace(
+                                        FILE_MUSIC_UPLOAD_DIR,
+                                        ""
+                                    )}
+                                </th>
+                                <th key={el.id + "_type"}>
+                                    <select name={`${el.id}_type_select`} id={`${el.id}_type_select`}>
+                                        {track.map(trackEl => {
+                                            return (
+                                                <option key={trackEl.id} value={trackEl.id}>{trackEl.file_type}</option>
+                                            )
+                                        })}
+                                    </select>
+                                    </th>
+                                <th key={el.id + "_size"}>{el.file_size}</th>
+                                <th key={el.id + "_check"}>
+                                    <input
+                                        type="checkbox"
+                                        name={`select-track-${el.id}`}
+                                        id={`select-track-${el.id}`}
+                                    />
+                                </th>
+                            </tr>
+                        );
+                    } else {
+                        res.push(
+                            <tr style={{display: 'none'}} key={el.id}>
+                                <th key={el.id + "_name"}>
+                                    {el.file_name.replace(
+                                        FILE_MUSIC_UPLOAD_DIR,
+                                        ""
+                                    )}
+                                </th>
+                                <th key={el.id + "_type"}>
+                                    <select name={`${el.id}_type_select`} id={`${el.id}_type_select`}>
+                                        {track.map(trackEl => {
+                                            return (
+                                                <option key={trackEl.id} value={trackEl.id}>{trackEl.file_type}</option>
+                                            )
+                                        })}
+                                    </select>
+                                    </th>
+                                <th key={el.id + "_size"}>{el.file_size}</th>
+                                <th key={el.id + "_check"}>
+                                    <input
+                                        type="checkbox"
+                                        name={`select-track-${el.id}`}
+                                        id={`select-track-${el.id}`}
+                                    />
+                                </th>
+                            </tr>
+                        );
+                    }
+                });
+            }
+        }
+
+
+        return res;
+    };
+
+    return (
+        <>
+            <Search keyid={'playlist_add'}>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>type</th>
+                            <th>size</th>
+                            <th>select</th>
+                        </tr>
+                    </thead>
+                    <tbody>{content()}</tbody>
+                </table>
+            </Search>
+        </>
+    );
+}

@@ -1,0 +1,11 @@
+.default-button{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+.default-button:hover {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    background-color: rgb(48, 48, 48);
+}

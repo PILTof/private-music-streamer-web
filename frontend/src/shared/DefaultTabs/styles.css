@@ -1,0 +1,32 @@
+.default-tabs-wrapp{
+    display: flex;
+}
+.tab-container{
+    display: flex;
+    justify-content: flex-start;
+}
+.tab{
+    background-color: rgb(233, 233, 233);
+    padding: 10px;
+    border-top: solid 1px black;
+    border-right: solid 1px black;
+    border-left: solid 1px black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+.tab-underline{
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+.tab:hover {
+    background-color: white;
+}
+
+.tab.active {
+    background-color: white;
+}
+
+.tab-underline-end{
+    border-bottom: 1px solid black;
+}

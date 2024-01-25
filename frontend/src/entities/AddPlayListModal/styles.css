@@ -1,0 +1,28 @@
+.add-play-list-wrapp{
+    display: flex;
+    justify-content: space-between;
+}
+.add-play-list-wrapp > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.add-play-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.add-play-list > div {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+}
+
+.add-play-list-wrapp #label-file-upload {
+    min-height: 300px;
+}
+.add-play-list-wrapp #form-file-upload {
+    max-width: 300px;
+}
+

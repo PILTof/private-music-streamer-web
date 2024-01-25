@@ -1,0 +1,13 @@
+.message-plash-wrapp{
+    background-color: rgb(51, 51, 51);
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(182, 253, 255);
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.message-plash-wrapp span {
+    color: rgb(255, 255, 255);
+}

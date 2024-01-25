@@ -1,0 +1,13 @@
+.error-plash-wrapp{
+    background-color: rgb(94, 4, 4);
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(255, 153, 0);
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.error-plash-wrapp span {
+    color: red;
+}
